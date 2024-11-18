@@ -21,5 +21,4 @@ jobs:
           workflow_conclusion: success
           name: artifact
 
-      - run: |
-          cat artifact.txt
+      - run: cat artifact.txt
