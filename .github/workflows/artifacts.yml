@@ -1,7 +1,7 @@
 name: Show artifact
 
 on:
-  workflow_dispatch:
+  pull_request:
 
 jobs:
   build_base:
@@ -23,3 +23,4 @@ jobs:
 
       - run: |
           cat artifact.txt
+          echo "foo3"
