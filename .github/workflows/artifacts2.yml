@@ -1,7 +1,7 @@
 name: Artifact upload
 
 on:
-  workflow_dispatch:
+  pull_request:
 
 permissions:
   actions: none
@@ -14,7 +14,7 @@ jobs:
       contents: write
     steps:
       - run: |
-          echo "LEGIT" >> artifact.txt
+          echo "TEST" >> artifact.txt
 
       - uses: actions/upload-artifact@v4.4.3
         with:
