@@ -1,0 +1,25 @@
+name: Test
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build_base:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+      id-token: write
+    steps:
+
+      - uses: dawidd6/action-download-artifact@v6
+        with:
+          github_token: ${{secrets.GITHUB_TOKEN}}
+          repo: pwntester-tests/blue-pony
+          branch: main
+          workflow: artifacts2.yaml
+          workflow_conclusion: success
+          name: artifact
+
+      - run: |
+          cat artifact.txt

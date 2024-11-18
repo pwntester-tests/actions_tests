@@ -1,0 +1,23 @@
+name: Artifact upload
+
+on:
+  workflow_dispatch:
+
+permissions:
+  actions: none
+
+jobs:
+  upload:
+    name: Upload
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - run: |
+          echo "LEGIT" >> artifact.txt
+
+      - uses: actions/upload-artifact@v4.4.3
+        with:
+          name: artifact
+          path: artifact.txt
+          if-no-files-found: error
