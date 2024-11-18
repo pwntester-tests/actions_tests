@@ -1,4 +1,4 @@
-name: Test
+name: Show artifact
 
 on:
   workflow_dispatch:
@@ -17,7 +17,7 @@ jobs:
           github_token: ${{secrets.GITHUB_TOKEN}}
           repo: pwntester-tests/blue-pony
           branch: main
-          workflow: artifacts2.yaml
+          workflow: artifacts2.yml
           workflow_conclusion: success
           name: artifact
 
